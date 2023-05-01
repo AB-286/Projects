@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopper Template</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        header {
+           display: flex;
+           justify-content: space-between;
+           font-size: 25px;
+           font-family: Arial;
+           padding: 10px;
+        }
+        .brand-title {
+            font-weight: bold;
+            font-size: 30px;
+        }
+        nav span {
+            margin-right: 15px;
+        }
+        .offer {
+            background-color: black;
+            color:white;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+        }
+        .offer span {
+            color:gold;
+        }
+        #card {
+            height: 400px;
+            width: 450px;
+            background-size: cover;
+            opacity: 0.7;
+            text-align: center;
+            cursor: grab; 
+        }
+        #card:hover {
+          opacity: 1;
+          cursor: grabbing;
+        }
+      main {
+            display: flex;
+            margin-top: 20px;
+      }
+      .women {
+        background-image: url(../assets/womens.jpg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      .men {
+        background-image: url(../assets/men.jpg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      .kids {
+        background-image: url(../assets/kids.jpg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      .card-title {
+        font-size: 50px;
+        color: white;
+        text-shadow: 2px 2px 2px coral;
+      }
+      #card button {
+        width: 150px;
+        height: 40px;
+        text-align: center;
+        font-size: 20px;
+        background-color: transparent;
+        border: none;
+      }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-between;
+        height: 350px;
+      }
+      article {
+        display: grid;
+        grid-template-columns: 3fr 3fr 3fr 3fr;
+        margin-top: 30px;
+        font-size: 15px;
+        font-family: arial;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      .article-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .article-title-span {
+        color: palevioletred;
+      }
+      .shopper-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        text-align: center;
+        font-family: Arial;
+      }
+      .shopper-main-title {
+        font-size: 35px;
+        margin-bottom: 20px;
+        color: rgb(67, 6, 43);
+      }
+      .shopper-main-subtitle {
+        font-size: 35px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      .shopper-main-text {
+        width: 500px;
+      }
+      .shopper-banner-1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .shopper-banner-1-left {
+        width: 300px;
+        height: 500px;
+        background-image: url(../assets/men.jpg);
+        background-size: cover;
+        margin-right: 50px;
+      }
+      .shopper-banner-1-right {
+        width: 700px;
+        height: 500px;
+        background-image: url(../assets/men.jpg);
+        background-size: cover;
+        position: relative;
+      }
+      .banner-offer {
+        background-color: red;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        padding: 10px;
+        width: 80px;
+        border-radius: 150px;
+        text-align: center;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        display: flex;
+      }
+      .shopper-banner-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .shopper-banner-2-left {
+        display: grid;
+        width: 700px;
+        height: 500px;
+        background-image: url(../assets/handbags.jpg);
+        background-size: cover;
+        margin-right: 50px;
+        margin-top: 30px;
+        
+      }
+      .shopper-banner-2-right {
+        width: 450px;
+        height: 500px;
+        background-image: url(../assets/shirt.jpg);
+        background-size: cover;
+        position: relative;
+        margin-top: 30px;
+        align-items: center;
+        justify-content: center;
+      }
+      .card-title-2 {
+        font-size: 25px;
+        color: black;
+        font-family:Verdana;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+      }
+      footer {
+        display: grid;
+        grid-template-columns: 4fr 4fr 4fr 4fr;
+        background-color: rgb(46, 39, 39);
+        color: white;
+        padding: 10px;
+        font-size: small;
+        font-family: Arial;
+        height: 100px;
+        margin-top: 200px;
+      }
+      main {
+        background-color: rgb(63, 50, 50);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 500px;
+      }
+      .text {
+        font-size: 50px;
+        font-weight: 80px;
+        width: 700px;
+      }
+      .title {
+        font-size: 30px;
+        margin-top: 50px ;
+        font-family: sans-serif;
+      }
+      .form {
+        margin-top: 20px;
+        display: flex;
+      }
+      .email {
+        width: 500px;
+        height: 50px;
+        background-color: white;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .button {
+        width: 100px;
+        height: 50px;
+        background-color: gray;
+        color: white;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+      }
+      .title {
+        display: grid;
+        position: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        font-family: Arial;
+        text-align: center;
+      }
+      .extra {
+       display: flex;
+        position: center;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+       font-size: 15px;
+        color: gray;
+        font-family: sans-serif;
+      }
+      .extra:hover {
+        color: red;
+      }
+      .row {
+        padding: 25px;
+        margin: 108px;
+        margin-top: -4px;
+      }
+      .row img {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 300px;
+        width: 250px;
+        padding: 45px;
+        margin: -3px;
+        margin-left: -50px;
+        margin-right: -20px;
+        cursor: pointer;
+      }
+      .text  {
+        text-align: center;
+        font-size: 35px;
+        color: cornflowerblue;
+        font-family: Arial;
+        justify-content: center;
+      }
+      .nextbanner {
+        height: 700px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        width: 800px;
+      }
+      .shop-now-button button {
+        background-color:black;
+        color:white;
+        border:none;
+        font-size: 20px; 
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand-title">Shopper.</div>
+        <div>
+            <nav>
+                <span>Home</span>
+                <span>Catalog</span>
+                <span>Pages</span>
+                <span>Blog</span>
+                <span>Shop</span>
+                <span>Docs</span>
+            </nav>
+        </div>
+        <div>
+            <nav>
+                <span class="bi bi-search"></span>
+                <span class="bi bi-person"></span>
+                <span class="bi bi-heart"></span>
+                <span class="bi bi-cart"></span>
+            </nav>
+        </div>
+    </header>
+    <div class="offer">
+        <span class="bi bi-lightning-fill"></span> HAPPY HOLIDAY DEALS ON EVERYTHING
+    </div>
+    <section>
+        <main>
+            <div class="women" id="card">
+            <div class="card-body">
+                <div class="card-title">women</div>
+                <div>
+                    <button>Shop women <span class="bi bi-arrow-right"></span></button>
+                </div>
+            </div>
+        </div>
+            <div class="men" id="card">
+                <div class="card-body">
+                <div class="card-title">Men</div>
+                <div>
+                    <button>Shop Men<span class="bi bi-arrow-right"></span></button>
+                </div>
+                </div>
+            </div>
+             <div class="kids" id="card">
+              <div class="card-body">
+                <div class="card-title">Kids</div>
+                <div>
+                    <button>shop kids<span class="bi bi-arrow-right"></span></button>
+                </div>
+             </div>
+            </div>
+        </main>
+        <article>
+            <div>
+                <div class="article-title">
+                    <span class="bi bi-truck"></span>FREE SHIPPING
+                </div>
+                <div>
+                    from all orders over $100
+                </div>
+            </div>
+            <div class="article-title">
+                <span class="bi bi-cart"></span>SECURE SHOPPING
+            </div>
+            <div>
+                You're in safe hands
+            </div>
+            <div class="article-title">
+                <span class="bi bi-tag"></span> OVER 10,000 STYLES
+                <div>
+                we have EVERYTHING you need
+            </div>
+            </div>
+        </article>
+        <hr size="2" noshade width="90%" color="gray">
+        <div class="shopper-main">
+          <div>
+            <div class="shopper-main-title">NEW COLLECTION</div>
+             <div class="shopper-main-subtitle">Best Picks 2019</div>
+            <div class="shopper-main-text">Appear, dry there darkness they're seas, dry waters thing fly midst. Beast, above fly brought Very green</div>
+          </div>
+        </div> 
+        <div class="shopper-banner-1">
+            <div class="shopper-banner-1-left">
+            </div>
+              <div class="shopper-banner-1-right">
+                <div class="banner-offer">
+                  30%off 
+                </div>
+            </div>
+            </div>
+            <div class="shopper-banner-2">
+              <div class="shopper-banner-2-left">
+                <div class="card-title-2">women</div>
+              </div>
+              <div class="shopper-banner-2-right">
+                shop now <span class="bi bi-arrow-right"></span>
+                <div class="card-title-2">shirts</div>
+                </div>
+            </div>
+            <div>
+            <div class="title">Top month Sellers</div>
+          </div>
+            <div class="extra">
+              <nav class="gender">
+                <span>women</span>
+                <span>men</span>
+                <span>kids</span>
+              </nav>
+            </div>
+            <section>
+              <div class="section-1">
+               <div class="card">
+              <div class="row">
+                <div>
+                  <img src="../assets/sandels women.jpg" width="100%" height="100">
+                  <p>
+                    <font color="gray" size="3">shoes</font><br>shoe leather sandels
+                    <br><br><b><strong>$155.00</strong></b>
+                  </p>
+                </div>
+              </div>
+               </div>
+              </div>
+              <div>
+              <div class="row">
+                <div>
+                <img src="../assets/nike air.jpg" width="100%"  height="100">
+                <p>
+                  <font color="gray" size="3">shoes</font><br>leather sneakers
+                  <br><br><b><strong>$156.00</strong></b>                
+                </p>
+              </div>
+              </div>
+              </div>
+              <div class="row">
+                <div>
+                  <img src="../assets/hippy sandel.jpg" width="100%"  height="100">
+                  <p>
+                    <font color="gray" size="3">shoes</font><br>hippy sandels for girls
+                    <br><br><b><strong>$888.00</strong></b>               
+                   </p>
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <img src="../assets/jackets.jpg" width="100%"  height="100">
+                  <p>
+                    <font color="gray" size="3">dress</font><br>womens jackets
+                    <br><br><b><strong>$321.00</strong></b>             
+                     </p>
+                </div>
+              </div>
+              <div>
+                <div class="row">
+                  <img src="../assets/crop top.jpeg" width="100%"  height="100">
+                  <p>
+                    <font color="gray" size="3">Dress</font><br>Crop top for women
+                    <br><br><b><strong>$177.00</strong></b>               
+                   </p>
+                </div>
+              </div>
+              <div>
+                <div class="row">
+                  <img src="../assets/louis vuitton bag.jpg" width="100%"  height="100">
+                  <p>
+                    <font color="gray" size="3">bag</font><br>louis vuitton bag
+                    <br><br><b><strong>$480.00</strong></b>                
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div class="row">
+                  <img src="../assets/floral dress.jpg" width="100%"  height="100">
+                  <p>
+                    <font color="gray" size="3">Dress</font><br>Floral Dress for women
+                    <br><br><b><strong>$165.00</strong></b>                
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div class="row">
+                  <img src="../assets/skirt.jpg" width="100%"  height="100">
+                  <p>
+                    <font color="gray" size="3">skirts</font><br>Printed A-line Skirt
+                    <br><br><b><strong>$199.00</strong></b>                
+                  </p>
+                </div>
+              </div>
+            </section>
+            <section>
+              <div class="text">
+                <span>discover more</span>
+                <hr width="150px" color="black">
+              </div>
+            </section>
+            <section>
+              <div class="nextbanner">
+                <img src="../assets/Fashion-brochure-.jpeg" width="1400px" height="700">
+              </div>
+            </section>
+            <section class="review-card">
+              <div class="heading-card">
+                <div class="first-heading">WHAT BUYERS SAY</div>
+               <div class="second-heading"> latest buyers reviews</div>
+              </div>
+              <div class="main-display-01">
+                <div class="border01">
+                  <div class="card display">
+                    <div>
+                      <img src="../assets/nike air.jpg">
+                    </div>
+                    <div>
+                      <span>
+                        <font color="black">nike jordan</font>
+                      </span><br>
+                      <span><b>low top sneakers</b></span><br>
+                      <span class="span-color">
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                        <span class="bi bi-star-fill"></span>
+                      </span>
+                    </div>
+                  </div>
+                  <div>
+                    <p class="para-01">
+                      From creepeth said moved given
+                      divide make multiply of him shall
+                      itself also above second doesn't
+                      unto created saying land herb sea
+                      midst night wherein  
+                  </p>
+                  <br>
+                  <p class="para-01">
+                    <font color="gray">Logan Edwards, 01 Jun 019</font>
+                  </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <main>
+              <div>
+                  <div class="title">Want Style Idead and Treats?</div>
+                  <div class="form">
+                      <div class="email">Enter your email</div>
+                          <div class="button">
+                              <div>
+                                  subscribe
+                              </div>
+                         </div>
+                      </div>
+                  </main>
+    </section>
+    <footer>
+      <div>
+      <b>SUPPORT</b> 
+        <div>FAQ</div>
+        <div>Investor Relations</div>
+        <div>Privacy</div>
+        <div>spped Test</div>
+    </div>
+    <div>
+        <div>Help Centre</div>
+        <div>Jobs</div>
+        <div>Cookie Preferences</div>
+        <div>Legal Notices</div>
+    </div>
+    <div>
+        <div>Account</div>
+        <div>Ways to Watch</div>
+        <div>Corporate Information</div>
+        <div>Only on Netflix</div>
+    </div>
+    <div>
+        <div>Centre</div>
+        <div>Terms of Use</div>
+        <div>Contact Us</div>
+    </div>
+    </footer>
+</body>
+</html>
